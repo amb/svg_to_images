@@ -7,6 +7,7 @@ bl_info = {
     "description": "Import SVG as images",
     "warning": "",
     "wiki_url": "",
+    "tracker_url": "https://github.com/amb/svg_to_images/issues",
     "support": "COMMUNITY",
     "category": "Import-Export",
 }
@@ -96,6 +97,7 @@ def load_svg_as_image_plane(filepath, dpi):
 
         bm.faces.ensure_lookup_table()
         face = bm.faces[-1]
+        # TODO: this here is bug
         face.material_index = 0
         for i, loop in enumerate(face.loops):
             uv = loop[uv_layer].uv
